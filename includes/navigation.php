@@ -23,7 +23,7 @@
                 		while($row = mysqli_fetch_assoc($all_categories_query_result)){
                 			
                 			$cat_title = $row['cat_title'];
-                			echo "<li><a href='#''>{$cat_title}</a></li>";
+                			echo "<li><a href='#'>{$cat_title}</a></li>";
                 		}
                 	?>
 
