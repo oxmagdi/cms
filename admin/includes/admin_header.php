@@ -1,7 +1,25 @@
-<?php include "../includes/db.php" ?>
-<?php include "functions.php" ?>
+<?php
+include "../includes/db.php";
+include "functions.php";
 
-<?php ob_start(); /* Important for header() */ ?>
+// Start the session
+session_start();
+
+ob_start(); /* Important for header() */
+
+
+// validate user
+if(!isset($_SESSION['user_id']))
+{
+    header('Location: ../index.php');
+} else
+{
+    if($_SESSION['user_role'] != 'admin')
+    {
+        header('Location: ../index.php');
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
