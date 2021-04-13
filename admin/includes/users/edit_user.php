@@ -35,6 +35,9 @@
 
 				$update_user_query_result = mysqli_query($connection, $query);
 				confirm_query($update_user_query_result);
+        		
+        		header("Location: users.php");
+				
 		}
 
 	
