@@ -17,9 +17,13 @@
                 </h1>
                 <?php 
 
-                    if(isset($_GET[''])){}
+                    if(isset($_GET['author']) && !empty($_GET['author']))
+                    {
 
-                    $query = "SELECT * FROM posts;";
+                    $author = $_GET['author'];
+                    $author = mysqli_real_escape_string($connection, $author);
+
+                    $query = "SELECT * FROM posts WHERE post_author = '{$author}';";
                     $all_posts_result = mysqli_query($connection, $query);
 
                     while ($row = mysqli_fetch_assoc($all_posts_result)) {
@@ -53,7 +57,13 @@
                 <!-- End First Blog Post  -->
 
 
-                    <?php } ?>
+                    <?php 
+                          }
+                        } else 
+                        {
+                            echo '<h1>Not Found!</h1>';
+                        }
+                    ?>
 
             </div>
             <!-- End Blog Entries Column -->
