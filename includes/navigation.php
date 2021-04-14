@@ -30,18 +30,9 @@
                     <li>
                         <a href="/cms/admin">Admin</a>
                     </li>
-<!-- 
                     <li>
-                        <a href="#">About</a>
+                        <a href="/cms/registration.php">Register</a>
                     </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-
- -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

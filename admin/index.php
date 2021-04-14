@@ -100,7 +100,7 @@
                         <?php 
                             $query = "SELECT user_id FROM users;";
                             $select_all_users = mysqli_query($connection, $query);
-                            $users_count = mysqli_num_rows($select_all_comments);
+                            $users_count = mysqli_num_rows($select_all_users);
 
                             echo "<div class='huge'>{$users_count}</div>";
 

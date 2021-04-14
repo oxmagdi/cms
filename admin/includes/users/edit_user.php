@@ -7,13 +7,12 @@
 		if(isset($_POST['edit_user'])){
 				 // echo $the_user_id;
 				 /* echo */ $user_firstname = $_POST['user_firstname'];
-				 /* echo */ $user_lastname = $_POST['user_lastname'];
-				 /* echo */ $user_name = $_POST['user_name'];
-				 /* echo */ $user_email = $_POST['user_email'];
-				 /* echo */ $user_password = $_POST['user_password'];
-				 /* echo */ $user_image = NULL;
-				 /* echo */ $user_role = $_POST['user_role'];
-				 /* echo */ $randSalt = NULL;
+				 /* echo */ $user_lastname  = $_POST['user_lastname'];
+				 /* echo */ $user_name      = $_POST['user_name'];
+				 /* echo */ $user_email     = $_POST['user_email'];
+				 /* echo */ $user_password  = $_POST['user_password'];
+				 /* echo */ $user_image     = NULL;
+				 /* echo */ $user_role      = $_POST['user_role'];
 
 				if(isset($_FILES['image'])){
 					$user_image = $_FILES['image']['name'];
@@ -28,7 +27,11 @@
 				$query .= "user_lastname = '{$user_lastname}',";
 				$query .= "user_name = '{$user_name}',";
 				$query .= "user_email = '{$user_email}',";
-				if(!empty($user_password)) $query .= "user_password = '{$user_password}',";
+				if(!empty($user_password))
+				{
+					$hash = password_hash($user_password, PASSWORD_BCRYPT, ['cost' => 8]);
+					$query .= "user_password = '{$hash}',";
+				}
 				$query .= "user_role = '{$user_role}' ";
 				$query .= "WHERE user_id = {$the_user_id} ;";
 				// echo $query;
