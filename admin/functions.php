@@ -1,5 +1,10 @@
 <?php 
 
+function active_item_if_not($url)
+{
+    if (basename($_SERVER['PHP_SELF']) === $url) echo "class='active'";
+}
+
 function confirm_query($result){
 	global $connection;
 

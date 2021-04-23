@@ -38,7 +38,7 @@
 
                                 if(isset($_GET['edit'])){
                                     $cat_id = $_GET['edit'];
-                                    include "includes/update_category.php";
+                                    include "includes/categories/update_category.php";
                                 } 
                             ?>
                         </div><!-- End Add Category Form -->
